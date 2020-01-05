@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Le Pianiste</title>
+    <link rel="stylesheet" href="/static/css/materialize.min.css">
+    <link rel="stylesheet" href="/static/css/style.css"> 
+  
+</head>
+
+<body>
+
+    <section id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h2>Le Pianiste</h2>
+                </div>
+                <div class="row">
+                <div class="col s12 m6">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Résumé ...</span>
+                      <p>Cette partition est syntaxiquement correct, elle comporte au total 
+                          {{stats["Accord"] + stats["SansAccord"] + stats["Silence"]}} mesures, dont
+                           {{stats["Accord"]}} accords, {{stats["Silence"]}} silences et  
+                           {{stats["SansAccord"]}} sans accord. Le tableau suivant illustre pour chaque mesure son statut ainsi 
+                       que l'erreur d'harmonie à cet emplacement si détectée. </p>    
+                    </div>
+                    <div class="card-action">
+                      <a href="{{ url_for('landing')}}">Retourner vers l'acceuil ...</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                    
+                    <table class="centered striped">
+                        <thead>
+                            <tr style="background-color: gray;">
+                              <th>#</th>
+                               <th>Mesure</th>
+                               <th>Statut</th>
+                               <th>Erreur d'harmonie ?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for indice, line in content %}
+                            <tr>
+                                    <td>{{indice+1}}</td>
+                                    <td>{{line}}</td>
+                                    <td>{{status[line]}}</td>
+                                    <td>{{erreurs[indice]}}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/materialize.min.js"></script>
+  
+</body>
+
+</html>
