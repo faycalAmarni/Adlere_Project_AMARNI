@@ -72,8 +72,8 @@ def is_partition(partition):
 def is_accord(mesure):
      
      mesure = mesure.split(";")   
-     return (len(mesure) == 3) and ((ord(mesure[1]) - ord(mesure[0]) == 1) 
-                        or (ord(mesure[2]) - ord(mesure[1]) == 2))
+     return (len(mesure) == 3) and ((ord(mesure[1]) - ord(mesure[0]) and [1,-6]) 
+                        and (ord(mesure[2]) - ord(mesure[1]) == 2))
     
 ##########################################################################
 #Retourner tous les accords de la partition     

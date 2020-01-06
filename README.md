@@ -7,3 +7,7 @@ Une application pour analyser des partiotions pour un pianiste. Le programme en 
 
 ### Une fois cela est fait, il faudra lancer l'app en utilisant cette commande
 * python3 app.py
+
+### Exécution
+
+Ce programme a été executé sur Linux (Ubuntu 19.10) et Windows 7.
